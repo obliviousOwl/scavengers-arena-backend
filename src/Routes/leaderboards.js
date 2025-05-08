@@ -34,7 +34,7 @@ router.get("/", async (req, res) => {
 router.post("/", async(req, res) => {
 
     const { playerId, name, score } = req.body;
-    if(!playerId || !name || typeof score !== "number"){
+    if (typeof playerId !== "number" || !name || typeof score !== "number") {
         return res.status(400).json({ error: "Missing or invalid playerId, name, or score."})
     }
     try {
